@@ -2,24 +2,23 @@
   <div class="container">
     <div class="row">
 
+      @if(jsonData && jsonData.weather && !hideBox)
+      {
       <div class="card border w-75">
         <div class="card-body py-4">
-
-          <h4 class="mb-1">Tehran</h4>
-          <p class="mb-2">Current temperature : <strong>5 °C</strong></p>
-          <p>Feels like: <strong>4 °C</strong></p>
+          <h3>City Details : </h3>
+          <hr>
+          <h4 class="mb-1">{{cityName}}</h4>
+          <p class="mb-2">Current temperature :   <strong>{{currentTemp}} °C</strong></p>
+          <p>Feels like:   <strong>{{feelLike}} °C</strong></p>
           <div class="d-flex flex-row align-items-center">
-            <p class="mb-0 me-4">Clouds</p>
-            <i class="fa-solid fa-cloud"></i>
-<!--            <i class="fa-solid fa-sun"></i>-->
-<!--            <i class="fa-solid fa-bolt"></i>-->
-<!--            <i class="fa-solid fa-snowflake"></i>-->
-<!--            <i class="fa-solid fa-cloud-rain"></i>-->
+            <p class="mb-0 me-4">{{jsonData?.weather[0]?.main}}</p>
+            <i [ngClass]="getWeatherCondition()"></i>
           </div>
 
         </div>
       </div>
-
+      }
     </div>
   </div>
 

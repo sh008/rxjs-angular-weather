@@ -3,7 +3,7 @@
 
   <input matInput type="text" [(ngModel)]="cityName">
    @if (cityName) {
-   <button matSuffix mat-icon-button aria-label="Clear" (click)="cityName=''">
+   <button matSuffix mat-icon-button aria-label="Clear" (click)="clearCity()">
      <mat-icon>close</mat-icon>
    </button>
 
